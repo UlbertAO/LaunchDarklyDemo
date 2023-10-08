@@ -1,1 +1,25 @@
-<h1>app component works</h1>
+<div class="container">
+    <div class="screen" *ngIf="!msg">
+        <div class="screen__content">
+            <div class="login">
+                <div class="login__field">
+                    <input type="text" class="login__input" placeholder="User name" [(ngModel)]="username"
+                        (keyup.enter)="submit()">
+                </div>
+                <button class="button login__submit" (click)="submit()">
+                    <span class="button__text">LogIn</span>
+                    <div class="button__loading" *ngIf="isSubmitted"></div>
+                </button>
+            </div>
+        </div>
+        <div class="screen__background">
+            <span class="screen__background__shape screen__background__shape4"></span>
+            <span class="screen__background__shape screen__background__shape3"></span>
+            <span class="screen__background__shape screen__background__shape2"></span>
+            <span class="screen__background__shape screen__background__shape1"></span>
+        </div>
+    </div>
+    <div class="msg" *ngIf="msg">
+        <span class="display__msg">{{msg}}</span>
+    </div>
+</div>
